@@ -1,7 +1,9 @@
 package org.wustrive.java.common.util;
 
 import java.lang.reflect.Array;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 
@@ -208,5 +210,31 @@ public class ArrayUtil {
         return false;
     }
     
+    
+    /**
+     * 映射键值（参考Python的zip()函数）<br>
+     * 例如：<br>
+     * keys = [a,b,c,d]<br>
+     * values = [1,2,3,4]<br>
+     * 则得到的Map是 {a=1, b=2, c=3, d=4}<br>
+     * 如果两个数组长度不同，则只对应最短部分
+     * 
+     * @param keys 键列表
+     * @param values 值列表
+     * @return Map
+     */
+    public static <T, K> Map<T, K> zip(T[] keys, K[] values) {
+        if (isEmpty(keys) || isEmpty(values)) {
+            return null;
+        }
+
+        final int size = Math.min(keys.length, values.length);
+        final Map<T, K> map = new HashMap<T, K>((int) (size / 0.75));
+        for (int i = 0; i < size; i++) {
+            map.put(keys[i], values[i]);
+        }
+
+        return map;
+    }
     
 }
