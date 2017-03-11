@@ -115,6 +115,7 @@ public class MyStringUtil {
             return "";
         }
         if (str.length() <= len) {
+            
             len = str.length();
         }
         String preStr = str.substring(0, str.length() - len);

@@ -30,7 +30,8 @@
 	
 	<modules>
   		<module>wustrive-java-common</module>
-  	</modules>
+  		<module>wustrive-java-redis</module>
+	</modules>
 
 	<dependencies>
 		<!-- jackson -->
