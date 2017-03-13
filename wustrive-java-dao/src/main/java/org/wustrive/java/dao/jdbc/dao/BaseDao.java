@@ -14,10 +14,9 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.wustrive.java.dao.jdbc.BaseCommond;
+import org.wustrive.java.common.util.ConvertUtil;
 import org.wustrive.java.dao.jdbc.SqlParameter;
 import org.wustrive.java.dao.jdbc.bean.BaseBean;
-import org.wustrive.java.dao.util.ConvertUtil;
 
 @SuppressWarnings("all")
 public class BaseDao {
