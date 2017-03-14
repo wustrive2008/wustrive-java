@@ -33,6 +33,7 @@
   		<module>wustrive-java-common</module>
   		<module>wustrive-java-redis</module>
     	<module>wustrive-java-dao</module>
+    	<module>wustrive-java-core</module>
   </modules>
 
 	<dependencies>
@@ -43,7 +44,7 @@
 		    <version>${jackson.version}</version>
 		</dependency>
 	
-		<!-- fastjson阿里巴巴jSON处理�?? -->
+		<!-- fastjson阿里巴巴jSON处理�??? -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
