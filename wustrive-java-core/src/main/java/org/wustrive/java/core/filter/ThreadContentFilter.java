@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.wustrive.java.common.util.WebUtil;
 import org.wustrive.java.core.response.Parameter;
-import org.wustrive.java.core.util.WebUtil;
 
 import com.google.common.collect.ImmutableSet;
 

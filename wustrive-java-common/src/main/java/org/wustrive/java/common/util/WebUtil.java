@@ -1,4 +1,4 @@
-package org.wustrive.java.core.util;
+package org.wustrive.java.common.util;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -7,10 +7,12 @@
     <artifactId>wustrive-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
   <groupId>com.wustrive.core</groupId>
   <artifactId>wustrive-java-core</artifactId>
   <name>wustrive-java-core</name>
   <url>http://maven.apache.org</url>
+  
   <properties>
   	<servlet.version>3.1.0</servlet.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,6 +22,12 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.wustrive.common</groupId>
+		    <artifactId>wustrive-java-common</artifactId>
+		    <version>${project.version}</version>
 		</dependency>
   </dependencies>
 </project>
