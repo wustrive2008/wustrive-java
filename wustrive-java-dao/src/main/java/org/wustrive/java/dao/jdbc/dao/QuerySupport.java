@@ -5,11 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.wustrive.java.dao.jdbc.BaseCommond;
 import org.wustrive.java.dao.jdbc.bean.BaseBean;
 
+@Component
 public class QuerySupport {
 
+    @Autowired
 	private BaseDao baseDao;
 	
 	public List<Map<String, Object>> find(String sql, Map<String, Object> parames, BaseCommond commond) {

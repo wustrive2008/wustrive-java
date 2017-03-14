@@ -8,21 +8,26 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.stereotype.Component;
 import org.wustrive.java.common.util.ConvertUtil;
 import org.wustrive.java.dao.jdbc.SqlParameter;
 import org.wustrive.java.dao.jdbc.bean.BaseBean;
 
 @SuppressWarnings("all")
+@Component
 public class BaseDao {
 	
+    @Autowired
 	private JdbcTemplate jdbcTemplate;
 
+    @Autowired
 	private NamedParameterJdbcTemplate paraJdbcTemplate;
 	
 
