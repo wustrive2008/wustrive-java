@@ -257,7 +257,7 @@ public class CollectionUtil {
      * @return Map
      */
     public static Map<String, String> zip(String keys, String values, String delimiter) {
-        return ArrayUtil.zip(MyStringUtil.split(keys, delimiter), MyStringUtil.split(values, delimiter));
+        return ArrayUtil.zip(StringUtil.split(keys, delimiter), StringUtil.split(values, delimiter));
     }
     
     /**

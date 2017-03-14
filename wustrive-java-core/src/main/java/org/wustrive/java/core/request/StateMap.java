@@ -29,6 +29,9 @@ public class StateMap {
 	//参数错误
     public static final int S_CLIENT_PARAM_ERROR = 10002;
     
+    //操作警告
+    public static final int S_CLIENT_WARNING = 10003;
+    
     /** 客户端权限错误  **/
     
     //登录认证失败
