@@ -131,6 +131,12 @@ public class ViewResult {
 		return this;
 	}
 	
+   public ViewResult state(BaseState baseState) {
+        this.state = baseState.getState();
+        this.message = baseState.getMessage();
+        return this;
+    }
+	
 	public ViewResult state(int state, String message) {
 		this.message = message;
 		this.state = state;
