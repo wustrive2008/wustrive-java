@@ -6,10 +6,18 @@ import java.io.Serializable;
 public class CurrentUser extends AuthBean implements Serializable{
 	private static final long serialVersionUID = -7919201192414048616L;
 
+	private String id;
 	private String name;
 	private String phoneNumber;
 	private String account;
 	private Integer adminType;
+	
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

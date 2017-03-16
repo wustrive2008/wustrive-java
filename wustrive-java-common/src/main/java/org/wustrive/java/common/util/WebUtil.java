@@ -7,6 +7,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class WebUtil {
+    
+    /**
+     * 验证请求是否为异步
+     * 
+     * @param request
+     * @return
+     */
+    public static boolean isAjaxRequest(HttpServletRequest request) {
+        try{
+            return request.getHeader("accept").indexOf("application/json") > -1 || (request  
+                    .getHeader("X-Requested-With")!= null && request  
+                    .getHeader("X-Requested-With").indexOf("XMLHttpRequest") > -1);
+        }catch(Exception e){
+            return false;
+        }
+    }
 
 	public static String getClientIp(HttpServletRequest request) {
         // 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址

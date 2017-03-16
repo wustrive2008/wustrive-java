@@ -123,6 +123,7 @@ public class ThreadContentFilter implements Filter {
 		logger.info("#destroy threadContent");
 	}
 
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 		if (isStaticFile(request, response)) {
 			filterChain.doFilter(request, response);
