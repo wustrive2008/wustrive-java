@@ -2,7 +2,14 @@ package org.wustrive.java.core.bean;
 
 import java.io.Serializable;
 
-
+/**
+ * 
+ * @Description: TODO
+ * @author wubaoguo
+ * @mail: wustrive2008@gmail.com
+ * @date: 2017年3月27日 下午7:05:57
+ * @version: v0.0.1
+ */
 public class CurrentUser extends AuthBean implements Serializable{
 	private static final long serialVersionUID = -7919201192414048616L;
 
