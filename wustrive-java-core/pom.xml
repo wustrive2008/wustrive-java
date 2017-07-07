@@ -7,26 +7,27 @@
     <artifactId>wustrive-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.wustrive.common</groupId>
-  <artifactId>wustrive-java-common</artifactId>
-  <name>wustrive-java-common</name>
+  
+  <groupId>com.wustrive.core</groupId>
+  <artifactId>wustrive-java-core</artifactId>
+  <name>wustrive-java-core</name>
   <url>http://maven.apache.org</url>
+  
   <properties>
   	<servlet.version>3.1.0</servlet.version>
-  	<hutool.version>2.16.2</hutool.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-  		<dependency>
+ 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.version}</version>
 		</dependency>
 		
 		<dependency>
-		    <groupId>com.xiaoleilu</groupId>
-		    <artifactId>hutool</artifactId>
-		    <version>${hutool.version}</version>
+		    <groupId>com.wustrive.common</groupId>
+		    <artifactId>wustrive-java-common</artifactId>
+		    <version>${project.version}</version>
 		</dependency>
   </dependencies>
 </project>

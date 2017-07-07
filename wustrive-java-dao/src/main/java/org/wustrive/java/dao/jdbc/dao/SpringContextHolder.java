@@ -1,11 +1,13 @@
-package org.wustrive.java.dao.jdbc;
+package org.wustrive.java.dao.jdbc.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SpringContextHolder implements ApplicationContextAware, DisposableBean {
 
 	private static ApplicationContext applicationContext = null;
@@ -46,6 +48,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	/**
 	 * 实现ApplicationContextAware接口, 注入Context到静态变量中.
 	 */
+	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) {
 
 		if (SpringContextHolder.applicationContext != null) {

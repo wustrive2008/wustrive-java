@@ -137,7 +137,7 @@ public class CollectionUtil {
         if(isEmpty(collection)){
             return new ArrayList<>();
         }else if(collection instanceof Set){
-            return new ArrayList<>(collection);
+            return new ArrayList<T>(collection);
         }else{
             return new ArrayList<>(new LinkedHashSet<>(collection));
         }
@@ -257,7 +257,7 @@ public class CollectionUtil {
      * @return Map
      */
     public static Map<String, String> zip(String keys, String values, String delimiter) {
-        return ArrayUtil.zip(MyStringUtil.split(keys, delimiter), MyStringUtil.split(values, delimiter));
+        return ArrayUtil.zip(StringUtil.split(keys, delimiter), StringUtil.split(values, delimiter));
     }
     
     /**

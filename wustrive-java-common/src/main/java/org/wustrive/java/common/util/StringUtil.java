@@ -19,8 +19,8 @@ import org.slf4j.LoggerFactory;
  * @author wustrive
  * @date 2017年3月11日 下午12:08:06
  */
-public class MyStringUtil {
-    protected static final Logger log = LoggerFactory.getLogger(MyStringUtil.class);
+public class StringUtil extends StringUtils {
+    protected static final Logger log = LoggerFactory.getLogger(StringUtil.class);
 
     /**
      * 字符串编码转换

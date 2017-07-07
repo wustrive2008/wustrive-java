@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Map;
 
 import org.springframework.jdbc.core.RowMapper;
-import org.wustrive.java.dao.jdbc.SpringContextHolder;
 import org.wustrive.java.dao.jdbc.dao.BaseDao;
+import org.wustrive.java.dao.jdbc.dao.SpringContextHolder;
 
 public interface BaseBean extends Serializable{
 	
