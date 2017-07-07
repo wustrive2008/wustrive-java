@@ -137,7 +137,7 @@ public class CollectionUtil {
         if(isEmpty(collection)){
             return new ArrayList<>();
         }else if(collection instanceof Set){
-            return new ArrayList<>(collection);
+            return new ArrayList<T>(collection);
         }else{
             return new ArrayList<>(new LinkedHashSet<>(collection));
         }
