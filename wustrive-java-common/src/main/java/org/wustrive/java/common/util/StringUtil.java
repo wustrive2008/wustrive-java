@@ -21,7 +21,7 @@ import com.xiaoleilu.hutool.log.LogFactory;
  * @date 2017年3月11日 下午12:08:06
  */
 public class StringUtil extends StringUtils {
-    protected static final Log log = LogFactory.get(FileUtil.class);
+    protected static final Log log = LogFactory.get(StringUtil.class);
 
     /**
      * 字符串编码转换
