@@ -1,18 +1,22 @@
 package org.wustrive.java.dao.jdbc.dao;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import org.wustrive.java.common.util.FileUtil;
+
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 @Component
 public class SpringContextHolder implements ApplicationContextAware, DisposableBean {
 
 	private static ApplicationContext applicationContext = null;
 
-	private static Logger logger = LoggerFactory.getLogger(SpringContextHolder.class);
+	protected static final Log log = LogFactory.get(FileUtil.class);
 
 	/**
 	 * 取得存储在静态变量中的ApplicationContext.
@@ -40,7 +44,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	 * 清除SpringContextHolder中的ApplicationContext为Null.
 	 */
 	public static void clearHolder() {
-		logger.debug("清除SpringContextHolder中的ApplicationContext:"
+	    log.debug("清除SpringContextHolder中的ApplicationContext:"
 				+ applicationContext);
 		applicationContext = null;
 	}
@@ -52,7 +56,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	public void setApplicationContext(ApplicationContext applicationContext) {
 
 		if (SpringContextHolder.applicationContext != null) {
-			logger.warn("SpringContextHolder中的ApplicationContext被覆盖, 原有ApplicationContext为:" + SpringContextHolder.applicationContext);
+		    log.warn("SpringContextHolder中的ApplicationContext被覆盖, 原有ApplicationContext为:" + SpringContextHolder.applicationContext);
 		}
 
 		SpringContextHolder.applicationContext = applicationContext; // NOSONAR

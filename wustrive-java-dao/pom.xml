@@ -32,7 +32,7 @@
 		</dependency>
 		
 		<dependency>
-		    <groupId>com.wustrive.common</groupId>
+		    <groupId>org.wustrive.common</groupId>
 		    <artifactId>wustrive-java-common</artifactId>
 		    <version>${project.version}</version>
 		</dependency>
