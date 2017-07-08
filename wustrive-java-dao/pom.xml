@@ -4,12 +4,12 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.wustrive</groupId>
+		<groupId>org.wustrive</groupId>
 		<artifactId>wustrive-java</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>com.wustrive.dao</groupId>
+	<groupId>org.wustrive.dao</groupId>
 	<artifactId>wustrive-java-dao</artifactId>
 	<name>wustrive-java-dao</name>
 	<url>http://maven.apache.org</url>
@@ -37,4 +37,5 @@
 		    <version>${project.version}</version>
 		</dependency>
 	</dependencies>
+	
 </project>

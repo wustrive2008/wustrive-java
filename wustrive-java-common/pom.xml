@@ -3,17 +3,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.wustrive</groupId>
+    <groupId>org.wustrive</groupId>
     <artifactId>wustrive-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.wustrive.common</groupId>
+  <groupId>org.wustrive.common</groupId>
   <artifactId>wustrive-java-common</artifactId>
   <name>wustrive-java-common</name>
   <url>http://maven.apache.org</url>
   <properties>
   	<servlet.version>3.1.0</servlet.version>
-  	<hutool.version>2.16.2</hutool.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
@@ -21,12 +20,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.version}</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.xiaoleilu</groupId>
-		    <artifactId>hutool</artifactId>
-		    <version>${hutool.version}</version>
 		</dependency>
   </dependencies>
 </project>

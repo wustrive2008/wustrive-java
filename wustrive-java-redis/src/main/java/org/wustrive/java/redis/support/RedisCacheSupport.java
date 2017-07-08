@@ -6,15 +6,17 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.wustrive.java.redis.HessianSerializer;
 import org.wustrive.java.redis.client.JedisClient;
 import org.wustrive.java.redis.client.JedisClientFactory;
+import org.wustrive.java.redis.pool.RedisPools;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.exceptions.JedisException;
+
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
  * 
@@ -25,8 +27,7 @@ import redis.clients.jedis.exceptions.JedisException;
  * @version: v0.0.1
  */
 public abstract class RedisCacheSupport {
-
-	private static final Logger logger = LoggerFactory.getLogger(RedisCacheSupport.class);
+    protected static final Log log = LogFactory.get(RedisPools.class);
 	
 	private JedisClient client;
 	 
@@ -48,7 +49,7 @@ public abstract class RedisCacheSupport {
         try {
            jedis = client.getJedis();
         } catch (JedisException e) {
-        	logger.warn("failed:jedisPool getResource.");
+        	log.warn("failed:jedisPool getResource.");
             if(jedis!=null){
             	client.close(jedis);
             }

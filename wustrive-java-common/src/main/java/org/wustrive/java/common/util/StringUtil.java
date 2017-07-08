@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
  * 补充的字符串工具类
@@ -20,7 +21,7 @@ import org.slf4j.LoggerFactory;
  * @date 2017年3月11日 下午12:08:06
  */
 public class StringUtil extends StringUtils {
-    protected static final Logger log = LoggerFactory.getLogger(StringUtil.class);
+    protected static final Log log = LogFactory.get(FileUtil.class);
 
     /**
      * 字符串编码转换

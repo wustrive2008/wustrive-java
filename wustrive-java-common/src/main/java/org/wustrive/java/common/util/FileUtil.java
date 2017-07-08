@@ -6,16 +6,14 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import com.google.common.io.LineProcessor;
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 public class FileUtil {
-	
-    protected static final Logger log = LoggerFactory.getLogger(FileUtil.class);  
+    protected static final Log log = LogFactory.get(FileUtil.class);
 	
 	private String fileName;
 	
@@ -58,7 +56,7 @@ public class FileUtil {
 				  Files.append((CharSequence)new String(contents+"\n"), newFile,this.charset);
 			 }
 	     }catch(IOException e){
-	    	 log.error("文件内容写入异常",e);
+	         log.error("文件内容写入异常", e);
 	     }
 	}
 	

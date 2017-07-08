@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 public class HtmlUtil {
-	private static Logger logger = LoggerFactory.getLogger(HtmlUtil.class);
+    protected static final Log log = LogFactory.get(FileUtil.class);
 	
     // 获取img标签正则  
     private static final String IMGURL_REG = "<img.*src=(.*?)[^>]*?>";  
@@ -64,7 +64,7 @@ public class HtmlUtil {
 			textStr = htmlStr;
 			
 		} catch (Exception e) {
-			logger.error("Html2Text: " + e.getMessage());
+		    log.error("Html2Text: " + e.getMessage());
 		}
 		
 		return textStr;// 返回文本字符串

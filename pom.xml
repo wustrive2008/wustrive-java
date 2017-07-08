@@ -13,28 +13,20 @@
 
 	<properties>
 		<jackson.version>2.8.5</jackson.version>
-		<logback.version>1.2.1</logback.version>
 		<junit.version>4.11</junit.version>
 		<guava.version>21.0</guava.version>
 		<httpclient.version>4.5.2</httpclient.version>
 		<httpcore.version>4.4.5</httpcore.version>
 		<httpmime.version>4.5.2</httpmime.version>
 		<google.guava>21.0</google.guava>
+		<hutool.version>2.16.2</hutool.version>
 		<common.lang3.version>3.4</common.lang3.version>
 		<common.io.version>2.5</common.io.version>
 		<fastjson.version>1.2.13</fastjson.version>
-		<logback.version>1.2.1</logback.version>
-		<slf4j.version>1.7.24</slf4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
 	
-	<modules>
-  		<module>wustrive-java-common</module>
-  		<module>wustrive-java-redis</module>
-    	<module>wustrive-java-dao</module>
-    	<module>wustrive-java-core</module>
-  </modules>
 
 	<dependencies>
 		<!-- jackson -->
@@ -72,26 +64,6 @@
 			<version>${google.guava}</version>
 		</dependency>
 		
-		
-		<!-- log 配置 -->
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>${slf4j.version}</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>ch.qos.logback</groupId>
-		    <artifactId>logback-core</artifactId>
-		    <version>${logback.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-		
 		<!-- http 工具 -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -109,6 +81,13 @@
 			<version>${httpmime.version}</version>
 		</dependency>
 		
+		<!-- java 工具类库 -->
+		<dependency>
+		    <groupId>com.xiaoleilu</groupId>
+		    <artifactId>hutool</artifactId>
+		    <version>${hutool.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -116,4 +95,24 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<finalName>wustrive-java</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>wustrive-java-common</module>
+		<module>wustrive-java-core</module>
+		<module>wustrive-java-dao</module>
+		<module>wustrive-java-redis</module>
+	</modules>
 </project>

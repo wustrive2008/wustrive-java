@@ -8,13 +8,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.wustrive.java.redis.conf.RedisConfig;
 
 import redis.clients.jedis.JedisPool;
 
 import com.alibaba.fastjson.JSON;
+import com.xiaoleilu.hutool.log.Log;
+import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
  * 
@@ -25,8 +25,7 @@ import com.alibaba.fastjson.JSON;
  * @version: v0.0.1
  */
 public class RedisPools {
-
-	 private static final Logger logger = LoggerFactory.getLogger(RedisPools.class);
+    protected static final Log log = LogFactory.get(RedisPools.class);
 	 
 	 /** key为文件名，value为分库的pool */
 	 private Map<String, JedisPool> pools = new ConcurrentHashMap<String, JedisPool>();
@@ -110,7 +109,7 @@ public class RedisPools {
                  try {
                      pool.destroy();
                  } catch (Exception e) {
-                     logger.error("destroy pool error!", e);
+                     log.error("destroy pool error!", e);
                  }
              }
          }

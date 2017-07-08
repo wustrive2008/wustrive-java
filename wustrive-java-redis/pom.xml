@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.wustrive</groupId>
+    <groupId>org.wustrive</groupId>
     <artifactId>wustrive-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.wustrive.redis</groupId>
+  <groupId>org.wustrive.redis</groupId>
   <artifactId>wustrive-java-redis</artifactId>
   <name>wustrive-java-redis</name>
   <url>http://maven.apache.org</url>
@@ -25,4 +25,18 @@
 	</dependency>
 
   </dependencies>
+  
+  <build>
+		<finalName>wustrive-java</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
