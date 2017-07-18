@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.wustrive</groupId>
@@ -9,7 +10,7 @@
 
 	<name>wustrive-java</name>
 	<url>http://maven.apache.org</url>
-	
+
 
 	<properties>
 		<jackson.version>2.8.5</jackson.version>
@@ -25,17 +26,17 @@
 		<fastjson.version>1.2.13</fastjson.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
-	
+
+
 
 	<dependencies>
 		<!-- jackson -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <version>${jackson.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
-	
+
 		<!-- fastjson阿里巴巴jSON处理 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -49,21 +50,21 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>${common.lang3.version}</version>
 		</dependency>
-		
+
 		<!-- commons-io -->
 		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		    <version>${common.io.version}</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${common.io.version}</version>
 		</dependency>
-		
+
 		<!-- google guava -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${google.guava}</version>
 		</dependency>
-		
+
 		<!-- http 工具 -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -80,14 +81,14 @@
 			<artifactId>httpmime</artifactId>
 			<version>${httpmime.version}</version>
 		</dependency>
-		
+
 		<!-- java 工具类库 -->
 		<dependency>
-		    <groupId>com.xiaoleilu</groupId>
-		    <artifactId>hutool</artifactId>
-		    <version>${hutool.version}</version>
+			<groupId>com.xiaoleilu</groupId>
+			<artifactId>hutool</artifactId>
+			<version>${hutool.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -95,7 +96,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>wustrive-java</finalName>
 		<plugins>
@@ -140,6 +141,19 @@
 					<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
 				</configuration>
 			</plugin>
+			<!-- mvn deploy 上传source -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<modules>
@@ -148,7 +162,7 @@
 		<module>wustrive-java-dao</module>
 		<module>wustrive-java-redis</module>
 	</modules>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>vcxx_release</id>
