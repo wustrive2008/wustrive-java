@@ -3,10 +3,9 @@ package org.wustrive.java.common.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 
+import com.google.common.collect.Lists;
 import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
 
@@ -708,7 +707,73 @@ public class DateTimeUtils {
     public static long getDifferMinter(long time1, long time2){
        return  (time1 - time2)/1000/60;
     }
-    
+
+
+	/**
+	 * 获取一段连续的时间段(天)
+	 * @param dBegin
+	 * @param dEnd
+	 * @return
+	 */
+	public static List<Date> findContinueDates(Date dBegin, Date dEnd)
+	{
+		List lDate = new ArrayList();
+		lDate.add(dBegin);
+		Calendar calBegin = Calendar.getInstance();
+		// 使用给定的 Date 设置此 Calendar 的时间
+		calBegin.setTime(dBegin);
+		Calendar calEnd = Calendar.getInstance();
+		// 使用给定的 Date 设置此 Calendar 的时间
+		calEnd.setTime(dEnd);
+		// 测试此日期是否在指定日期之后
+		while (dEnd.after(calBegin.getTime()))
+		{
+			// 根据日历的规则，为给定的日历字段添加或减去指定的时间量
+			calBegin.add(Calendar.DAY_OF_MONTH, 1);
+			lDate.add(calBegin.getTime());
+		}
+		return lDate;
+	}
+
+	public static List<String> getContinueDateOfString(String beginDate, String endDate){
+		try {
+			Date bDate = new SimpleDateFormat(DateTimeUtils.pattern_yyyy_MM_dd).parse(beginDate);
+			Date eDate = (new SimpleDateFormat(DateTimeUtils.pattern_yyyy_MM_dd)).parse(endDate);
+			List<Date> dates = findContinueDates(bDate,eDate);
+			List<String> res = Lists.newArrayList();
+			dates.stream().forEach(date -> res.add(new SimpleDateFormat(DateTimeUtils.pattern_yyyy_MM_dd).format(date)));
+			return res;
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * 根据结束日期和天数向前取连续的日期
+	 * @param endDate
+	 * @param days
+	 * @return
+	 */
+	public static List<String> getContinueDateOfNums(String endDate, Integer days) {
+		Date dEnd = parseStringToDate(DateTimeUtils.pattern_yyyy_MM_dd, endDate);
+		List<String> res = Lists.newArrayList();
+		res.add(endDate);
+		Calendar calEnd = Calendar.getInstance();
+		// 使用给定的 Date 设置此 Calendar 的时间
+		calEnd.setTime(dEnd);
+		// 测试此日期是否在指定日期之后
+		for (int i = 0; i < days; i++) {
+			// 根据日历的规则，为给定的日历字段添加或减去指定的时间量
+			calEnd.add(Calendar.DAY_OF_MONTH, -1);
+			res.add(parseDateToString(DateTimeUtils.pattern_yyyy_MM_dd,calEnd.getTime()));
+		}
+		//列表顺序翻转
+		Collections.sort(res);
+		return res;
+
+	}
+
     public static void main(String[] args) {
         //System.out.println(parseDateToUnixTime("yyy-dd-MM", "2017-02-01"));
         System.out.println(getDifferMinter(new Date().getTime(), parseStringToDate(DateTimeUtils.pattern_yyyy_MM_dd_HH_mm_ss, "2017-07-08 17:20:00").getTime()));
