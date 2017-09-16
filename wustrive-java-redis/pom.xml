@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.wustrive</groupId>
     <artifactId>wustrive-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
   <groupId>org.wustrive.redis</groupId>
   <artifactId>wustrive-java-redis</artifactId>
@@ -16,8 +16,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-  
-	  <!-- jedis -->
+
+    <!-- jedis -->
 	<dependency>
 	    <groupId>redis.clients</groupId>
 	    <artifactId>jedis</artifactId>
@@ -25,18 +25,4 @@
 	</dependency>
 
   </dependencies>
-  
-  <build>
-		<finalName>wustrive-java</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
