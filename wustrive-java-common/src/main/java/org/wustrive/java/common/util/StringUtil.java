@@ -11,13 +11,13 @@ import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
  * 补充的字符串工具类
- * 
+ *
+ * @author wustrive
  * @Title: MyStringUtil.java
  * @ClassName: org.wustrive.java.common.string.MyStringUtil
  * @Description: TODO
- *
- *               Copyright 2015-2017 维创盈通 - Powered By 研发中心 V1.0.0
- * @author wustrive
+ * <p>
+ * Copyright 2015-2017 维创盈通 - Powered By 研发中心 V1.0.0
  * @date 2017年3月11日 下午12:08:06
  */
 public class StringUtil extends StringUtils {
@@ -25,12 +25,12 @@ public class StringUtil extends StringUtils {
 
     /**
      * 字符串编码转换
-     * 
+     *
      * @param param
      * @return
      */
     public static String convertEncode(String sourceCharsetName, String targetCharsetName,
-            String str) {
+                                       String str) {
         String ret = "";
         if (StringUtils.isNotBlank(str)) {
             try {
@@ -45,7 +45,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * 不带中划线的UUID
-     * 
+     *
      * @return
      */
     public static String getUUID() {
@@ -57,7 +57,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * List转换为string 分隔符分割
-     * 
+     *
      * @param list
      * @param separator
      * @return
@@ -74,7 +74,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * 过滤emoji表情
-     * 
+     *
      * @param str
      * @return
      */
@@ -92,7 +92,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * 判断是否是emoji表情
-     * 
+     *
      * @param code
      * @return
      */
@@ -105,7 +105,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * 替换字符串后几位
-     * 
+     *
      * @param str
      * @param len
      * @param replaceChar
@@ -116,7 +116,7 @@ public class StringUtil extends StringUtils {
             return "";
         }
         if (str.length() <= len) {
-            
+
             len = str.length();
         }
         String preStr = str.substring(0, str.length() - len);
@@ -127,7 +127,7 @@ public class StringUtil extends StringUtils {
 
     /**
      * 复制字符串 a->aaaa
-     * 
+     *
      * @param srcStr
      * @param num
      * @return
@@ -139,12 +139,12 @@ public class StringUtil extends StringUtils {
         }
         return sb.toString();
     }
-    
+
     /**
      * 切分字符串<br>
      * from jodd
-     * 
-     * @param str 被切分的字符串
+     *
+     * @param str       被切分的字符串
      * @param delimiter 分隔符
      * @return 字符串
      */
@@ -153,7 +153,7 @@ public class StringUtil extends StringUtils {
             return null;
         }
         if (str.trim().length() == 0) {
-            return new String[] { str };
+            return new String[]{str};
         }
 
         int dellen = delimiter.length(); // del length
@@ -178,6 +178,17 @@ public class StringUtil extends StringUtils {
         }
         return result;
     }
-    
+
+    /**
+     * 是否是整数
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isInteger(String str) {
+        if (StringUtil.isBlank(str))
+            return false;
+        return str.matches("^-?\\d+");
+    }
 
 }

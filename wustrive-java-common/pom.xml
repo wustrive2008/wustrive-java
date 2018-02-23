@@ -1,25 +1,34 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.wustrive</groupId>
-    <artifactId>wustrive-java</artifactId>
-    <version>1.0</version>
-  </parent>
-  <groupId>org.wustrive.common</groupId>
-  <artifactId>wustrive-java-common</artifactId>
-  <name>wustrive-java-common</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-  	<servlet.version>3.1.0</servlet.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.version}</version>
-		</dependency>
-  </dependencies>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.wustrive</groupId>
+        <artifactId>wustrive-java</artifactId>
+        <version>1.0</version>
+    </parent>
+    <groupId>org.wustrive.common</groupId>
+    <artifactId>wustrive-java-common</artifactId>
+    <name>wustrive-java-common</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <servlet.version>3.1.0</servlet.version>
+        <jwt.version>5.1</jwt.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
+
+        <!-- jwt -->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
+    </dependencies>
 </project>
