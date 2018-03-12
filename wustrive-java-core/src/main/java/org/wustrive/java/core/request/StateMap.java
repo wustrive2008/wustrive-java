@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * HTTP API 错误码定义
- * @Description: TODO
+ * @Description: HTTP API 错误码定义
  * @author wubaoguo
  * @mail: wustrive2008@gmail.com
  * @date: 2017年3月14日 上午10:13:02

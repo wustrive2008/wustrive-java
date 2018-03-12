@@ -30,5 +30,14 @@
             <artifactId>nimbus-jose-jwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
+
+        <!-- core -->
+        <dependency>
+            <groupId>org.wustrive.core</groupId>
+            <artifactId>wustrive-java-core</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>

@@ -5,10 +5,10 @@ import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
 import net.minidev.json.JSONObject;
-import org.wustrive.java.common.exception.BusinessException;
 import org.wustrive.java.common.properties.PropertiesConfig;
 import org.wustrive.java.common.util.DateUtil;
 import org.wustrive.java.common.util.StringUtil;
+import org.wustrive.java.core.exception.BusinessException;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -26,7 +26,6 @@ public class JWTUtil {
     private final static String JWT_SECRET;
 
     private final static int JWT_EXP;
-
 
     static {
         String jwtSecret = PropertiesConfig.getProperty("jwt.secret");
