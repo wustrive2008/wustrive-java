@@ -6,7 +6,7 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
 /**
  * 
- * @Description: TODO
+ * @Description: redis配置
  * @author wubaoguo
  * @mail: wustrive2008@gmail.com
  * @date: 2017年3月11日 下午4:14:25

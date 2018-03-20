@@ -18,7 +18,7 @@ import com.xiaoleilu.hutool.log.LogFactory;
 
 /**
  * 
- * @Description: TODO
+ * @Description: redis连接池配置
  * @author wubaoguo
  * @mail: wustrive2008@gmail.com
  * @date: 2017年3月11日 下午4:14:40

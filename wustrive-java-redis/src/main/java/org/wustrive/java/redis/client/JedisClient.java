@@ -6,7 +6,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
- * @Description: TODO
+ * @Description: jedis客户端实例
  * @author wubaoguo
  * @mail: wustrive2008@gmail.com
  * @date: 2017年3月11日 下午4:08:26
